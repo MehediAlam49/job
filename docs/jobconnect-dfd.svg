@@ -1,0 +1,29 @@
+<svg role="img" aria-labelledby="dfd-title dfd-description" viewBox="0 0 960 430" xmlns="http://www.w3.org/2000/svg">
+  <title id="dfd-title">JobConnect animated data flow diagram</title>
+  <desc id="dfd-description">Users send requests through Django URLs and views to SQLite and media storage. Responses return through the same application layer.</desc>
+  <style>
+    .canvas { fill: #101827; }
+    .box { fill: #17243a; stroke: #7dd3fc; stroke-width: 2; }
+    .store { fill: #20334d; stroke: #fbbf24; stroke-width: 2; }
+    .label { fill: #f8fafc; font: 600 16px sans-serif; text-anchor: middle; }
+    .sub { fill: #cbd5e1; font: 13px sans-serif; text-anchor: middle; }
+    .flow { fill: none; stroke: #67e8f9; stroke-width: 3; stroke-dasharray: 9 8; animation: move 1.8s linear infinite; }
+    .data { fill: none; stroke: #fbbf24; stroke-width: 3; stroke-dasharray: 7 9; animation: move 2.2s linear infinite reverse; }
+    @keyframes move { to { stroke-dashoffset: -34; } }
+    @media (prefers-reduced-motion: reduce) { .flow, .data { animation: none; } }
+  </style>
+  <defs>
+    <marker id="arrow-cyan" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#67e8f9"/></marker>
+    <marker id="arrow-yellow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#fbbf24"/></marker>
+  </defs>
+  <rect class="canvas" width="960" height="430" rx="12"/>
+  <rect class="box" x="35" y="170" width="170" height="90" rx="10"/><text class="label" x="120" y="208">Users</text><text class="sub" x="120" y="232">Seekers / Recruiters</text>
+  <rect class="box" x="270" y="170" width="170" height="90" rx="10"/><text class="label" x="355" y="208">Django</text><text class="sub" x="355" y="232">URLs + Templates</text>
+  <rect class="box" x="505" y="170" width="170" height="90" rx="10"/><text class="label" x="590" y="208">Application Logic</text><text class="sub" x="590" y="232">Views + Forms</text>
+  <rect class="store" x="740" y="90" width="170" height="80" rx="10"/><text class="label" x="825" y="125">SQLite</text><text class="sub" x="825" y="148">Users, jobs, applications</text>
+  <rect class="store" x="740" y="260" width="170" height="80" rx="10"/><text class="label" x="825" y="295">Media Storage</text><text class="sub" x="825" y="318">Resumes + profile images</text>
+  <path class="flow" marker-end="url(#arrow-cyan)" d="M205 200 H270"/><path class="flow" marker-end="url(#arrow-cyan)" d="M440 200 H505"/>
+  <path class="data" marker-end="url(#arrow-yellow)" d="M675 190 C710 160 710 130 740 130"/><path class="data" marker-end="url(#arrow-yellow)" d="M675 230 C710 265 710 300 740 300"/>
+  <path class="flow" marker-end="url(#arrow-cyan)" d="M505 250 C440 300 300 300 205 235"/>
+  <text class="sub" x="480" y="375">Requests in cyan · persisted data in amber</text>
+</svg>
